@@ -3,27 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoti</title>
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <title>Shote</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">🎥 Shoti TV</h1>
-        
+    <header class="app-bar">
+        <h1 class="app-title">🎬 RANDOM SHOTE</h1>
+    </header>
+
+    <main class="container">
         <div class="video-card">
+            <div class="video-loading" id="loading">
+                <div class="shimmer"></div>
+            </div>
             <video id="videoPlayer" class="video-element" controls></video>
-            <div class="user-info">
-                <h2 id="username" class="username">@username</h2>
-                <p id="nickname" class="nickname">Nickname</p>
-                <p id="bio" class="bio">User bio will appear here</p>
+            
+            <div class="user-card">
+                <div class="avatar-placeholder"></div>
+                <div class="user-info">
+                    <h2 id="username" class="username">@username</h2>
+                    <p id="nickname" class="nickname">Nickname</p>
+                    <p id="bio" class="bio">Loading content...</p>
+                </div>
             </div>
         </div>
+    </main>
 
-        <button id="newVideoBtn" class="mdc-button mdc-button--raised">
-            <span class="mdc-button__label">🎲 Generate</span>
+    <div class="fab-container">
+        <button id="newVideoBtn" class="mdc-fab" aria-label="Next video">
+            <span class="mdc-fab__icon material-symbols-outlined">arrow_forward</span>
         </button>
     </div>
+
+    <div class="snackbar" id="snackbar"></div>
+
+    <footer class="app-footer">
+        <p>Powered by chilli • Made with ❤️</p>
+    </footer>
 </body>
 </html>
